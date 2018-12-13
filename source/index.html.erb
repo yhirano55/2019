@@ -1,23 +1,181 @@
 ---
-title: Welcome to Middleman
+id: 2019
+title: Rails Developers Meetup 2019
+description: 2019.03.22, 2019.03.23 at Oracle Corporation Japan #railsdm2019
 ---
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 340" class="middleman-logo" aria-labelledby="middleman-logo__title" role="img">
-  <title id="middleman-logo__title">Middleman</title>
-  <path class="middleman-logo__top-left-bar" fill-opacity=".45" d="M0 40L200 0v30L0 60z"/>
-  <path class="middleman-logo__top-right-bar" fill="#fff" d="M200 0l200 40v20L200 30z"/>
-  <path class="middleman-logo__left-m" fill-opacity=".45" d="M0 78v184l45 5V152l45 83 47-83v129l53 7V52l-57 8-43 83-43-70z"/>
-  <path class="middleman-logo__right-m" fill="#fff" d="M400 78v184l-45 5V152l-45 83-47-83v129l-53 7V52l57 8 43 83 43-70z"/>
-  <path class="middleman-logo__bottom-left-bar" fill-opacity=".45" d="M0 300l200 40v-30L0 280z"/>
-  <path class="middleman-logo__bottom-right-bar" fill="#fff" d="M200 340l200-40v-20l-200 30z"/>
-</svg>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="logo"><%= image_tag "logo.svg", alt: "Rails Developers Meetup 2019" %></h1>
+    </div><!--/.col-->
+  </div><!--/.row-->
+</div><!--/.container-->
 
-<h1>
-  Middleman is Running
-</h1>
+<ul class="summary">
+  <li>2019.03.22, 2019.03.23</li>
+  <li><i class="fas fa-map-marker-alt"></i> Oracle Corporation Japan <small>[<%= link_to "MAP", "https://www.google.co.jp/maps?q=Oracle+Corporation+Japan&um=1&ie=UTF-8&sa=X&ved=0ahUKEwi-2dSvt5zfAhUd97wKHW4ZDCwQ_AUIDigB", target: "_blank" %>]</small></li>
+  <li><i class="fab fa-twitter"></i> <%= link_to "#railsdm2019", "https://twitter.com/hashtag/railsdm2019", target: "_blank" %></li>
+</ul><!--/.Summary-->
 
-<%= link_to(
-  "Read Documentation",
-  "https://middlemanapp.com/basics/templating_language/",
-  target: "_blank"
-) %>
+<div class="container container--entries">
+  <div class="row center-md">
+    <div class="col-xs-12 col-md-9">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <a href="javascript: void(0)" class="btn btn--entry btn--disabled">
+            <strong>GET YOUR TICKET - DAY 1</strong>
+            <span>2019.01.15 10:00 OPEN</span>
+          </a>
+        </div><!--/.col-->
+        <div class="col-xs-12 col-sm-6">
+          <a href="javascript: void(0)" class="btn btn--entry btn--disabled">
+            <strong>GET YOUR TICKET - DAY 2</strong>
+            <span>2019.01.15 10:00 OPEN</span>
+          </a>
+        </div><!--/.col-->
+      </div><!--/.row-->
+    </div><!--/.col-->
+  </div><!--/.row-->
+</div><!--/.container-->
+
+<div class="container container--keynote">
+  <div class="row center-xs">
+    <div class="col-xs-12">
+      <h2 class="title">KEYNOTE</h2>
+    </div><!--/.col-->
+  </div><!--/.row-->
+  <div class="row center-sm">
+    <div class="col-xs-12 col-sm-7">
+      <div class="row center-xs">
+        <% data.keynote.each do |record| %>
+          <div class="col-xs-6">
+            <%= image_tag "keynote/#{record[:github]}.jpg", alt: "takahashim", class: "thumbnail--keynote" %>
+            <div class="userinfo">
+              <p class="username"><%= record[:github] %></p>
+              <ul class="links">
+                <li>
+                  <% link_to "https://github.com/#{record[:github]}", target: "_blank" do %>
+                    <i class="fab fa-github"></i>
+                  <% end %>
+                </li>
+                <% if record[:twitter] %>
+                  <li>
+                    <% link_to "https://twitter.com/#{record[:twitter]}", target: "_blank" do %>
+                      <i class="fab fa-twitter"></i>
+                    <% end %>
+                  </li>
+                <% end %>
+              </ul>
+            </div><!--/.userinfo-->
+          </div><!--/.col-->
+        <% end %>
+        <div class="col-xs-6">
+          <%= image_tag "keynote/undernegotiation.png", alt: "UNDER NEGOTIATION", class: "thumbnail--keynote" %>
+        </div><!--/.col-->
+      </div><!--/.row-->
+    </div><!--/.col-->
+  </div><!--/.row-->
+</div><!--/.container-->
+
+<div class="container container--speaker">
+  <div class="row center-xs">
+    <div class="col-xs-12">
+      <h2 class="title">SPEAKER</h2>
+    </div><!--/.col-->
+  </div><!--/.row-->
+  <div class="row center-xs center-md">
+    <% data.speaker.each do |record| %>
+      <div class="col-xs-4 col-md-2">
+        <%= image_tag "speaker/#{record[:github]}.jpg", alt: record[:github], class: "thumbnail--speaker" %>
+        <div class="userinfo">
+          <p class="username"><%= record[:github] %></p>
+          <ul class="links">
+            <li>
+              <% link_to "https://github.com/#{record[:github]}", target: "_blank" do %>
+                <i class="fab fa-github"></i>
+              <% end %>
+            </li>
+            <% if record[:twitter] %>
+              <li>
+                <% link_to "https://twitter.com/#{record[:twitter]}", target: "_blank" do %>
+                  <i class="fab fa-twitter"></i>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div><!--/.userinfo-->
+      </div><!--/.col-->
+    <% end %>
+  </div><!--/.row-->
+</div><!--/.container-->
+
+<div class="container container--timetable">
+  <div class="row center-xs">
+    <div class="col-xs-12">
+      <h2 class="title">TIMETABLE</h2>
+    </div><!--/.col-->
+  </div><!--/.row-->
+  <div class="row center-xs">
+    <div class="col-xs-12">
+      <p class="comingsoon">
+        3トラック並行、2日間計62セッションを実施予定。<br>
+        タイムテーブルは、現在準備中です。<br>
+      </p>
+    </div><!--/.col-->
+  </div><!--/.row-->
+</div><!--/.container-->
+
+<div class="container container--sponsor">
+  <div class="row center-xs">
+    <div class="col-xs-12">
+      <h2 class="title">SPONSOR</h2>
+    </div><!--/.col-->
+  </div><!--/.row-->
+  <div class="row center-xs">
+    <div class="col-xs-12">
+      <p class="comingsoon">
+        19年1月上旬にスポンサーメニューを公開予定。<br>
+        なお、今回はイベント全体での懇親会の開催を行わず、<br>
+        スポンサー主催のドリンクアップを<br>
+        いくつかの会場にて実施する予定です。
+      </p>
+    </div><!--/.col-->
+  </div><!--/.row-->
+</div><!--/.container-->
+
+<div class="container container--staff">
+  <div class="row center-xs">
+    <div class="col-xs-12">
+      <h2 class="title">STAFF</h2>
+    </div><!--/.col-->
+  </div><!--/.row-->
+  <div class="row center-xs center-md">
+    <% data.staff.each do |record| %>
+      <div class="col-xs-3 col-md-1">
+        <%= image_tag "staff/#{record[:github]}.jpg", alt: record[:github], class: "thumbnail--staff" %>
+        <div class="staffinfo">
+          <p class="username"><%= record[:github] %></p>
+          <ul class="links">
+            <li>
+              <% link_to "https://github.com/#{record[:github]}", target: "_blank" do %>
+                <i class="fab fa-github"></i>
+              <% end %>
+            </li>
+            <% if record[:twitter] %>
+              <li>
+                <% link_to "https://twitter.com/#{record[:twitter]}", target: "_blank" do %>
+                  <i class="fab fa-twitter"></i>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div><!--/.userinfo-->
+      </div><!--/.col-->
+    <% end %>
+  </div><!--/.row-->
+</div><!--/.container-->
+
+<p class="copyright">
+  &copy; Rails Developers Meetup 2019 / designed by 徳用カルパス
+</p>

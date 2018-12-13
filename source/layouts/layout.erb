@@ -5,12 +5,27 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Use the title from a page's frontmatter if it has one -->
     <title><%= current_page.data.title || "Middleman" %></title>
+    <meta content="<%= current_page.data.description %>" name="description">
+    <meta name="twitter:title" content="<%= current_page.data.description %>">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://railsdm.github.io">
+    <meta name="twitter:image" content="https://railsdm.github.io<%= image_path("og/#{current_page.data.id}.png") %>">
+    <meta name="twitter:description" content="<%= current_page.data.description %>">
+    <meta name="og:title" content="<%= current_page.data.description %>">
+    <meta name="og:type" content="website">
+    <meta name="og:url" content="https://railsdm.github.io">
+    <meta name="og:image" content="https://railsdm.github.io<%= image_path("og/#{current_page.data.id}.png") %>">
+    <meta name="og:description" content="<%= current_page.data.description %>">
+    <link rel="apple-touch-icon" href="<%= image_path "icons/apple-touch-icon.png" %>" sizes="180x180">
+    <link rel="icon" type="image/png" href="<%= image_path "icons/favicon-32x32.png" %>" sizes="32x32">
+    <link rel="icon" type="image/png" href="<%= image_path "icons/favicon-16x16.png" %>" sizes="16x16">
+    <%= stylesheet_link_tag "flexboxgrid.min" %>
     <%= stylesheet_link_tag "site" %>
-    <%= javascript_include_tag "site" %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
   </head>
   <body>
     <%= yield %>
+    <%= javascript_include_tag "site" %>
   </body>
 </html>

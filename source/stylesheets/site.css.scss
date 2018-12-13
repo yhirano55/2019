@@ -1,24 +1,166 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css);
+
 body {
-  background-color: #fbc547;
-  color: #333;
-  font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir",
-    "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans",
-    "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
-    "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
-  padding: 18vh 1rem;
-  text-align: center;
+  background: #9c1311;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-a {
-  color: rgba(#000, 0.7);
+.container {
+  &--entries {
+    margin-top: 2.7rem;
+  }
 
-  &:focus,
-  &:hover {
-    color: rgba(#000, 0.6);
+  &--keynote,
+  &--speaker,
+  &--staff,
+  &--timetable,
+  &--sponsor {
+    margin-top: 2.7rem;
+
+    h2.title {
+      margin: 0 0 2.7rem 0;
+      font-size: 3rem;
+    }
   }
 }
 
-.middleman-logo {
-  margin-bottom: 1rem;
-  width: 10rem;
+h1.logo {
+  margin: 10rem 0 0 0;
+  img {
+    display: block;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+}
+
+ul.summary {
+  margin: 2.7rem 0 0;
+  padding: 1.35rem 0;
+  background: #77110a;
+  color: #fff;
+  list-style: none;
+  text-align: center;
+
+  li {
+    font-size: 1.35rem;
+    line-height: 2rem;
+  }
+}
+
+.btn {
+  display: block;
+  padding: 1rem 0;
+  border: 1px solid #fff;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &--entry {
+    background: #33435b;
+  }
+
+  &--disabled {
+    opacity: .35;
+    cursor: default;
+  }
+
+  strong, span {
+    display: block;
+    text-align: center;
+  }
+
+  strong {
+    font-size: 1.35rem;
+  }
+
+  span {
+    margin-top: .25rem;
+  }
+}
+
+a {
+  color: #fff;
+}
+
+img.thumbnail {
+  display: block;
+  margin: 0 auto;
+
+  &--keynote {
+    width: 100%;
+    max-width: 270px;
+  }
+  &--speaker {
+    width: 100%;
+    max-width: 177.5px;
+  }
+  &--staff {
+    width: 100%;
+    max-width: 177.5px;
+  }
+}
+
+.userinfo {
+  padding: 1rem 0 1.35rem 0;
+  overflow: hidden;
+
+  .username {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  ul.links {
+    margin: .75rem 0 0 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: inline-block;
+      margin: 0 .35rem;
+      font-size: 1.35rem;
+      text-align: center;
+    }
+  }
+}
+
+.staffinfo {
+  padding: .5rem 0 .75rem 0;
+  overflow: hidden;
+
+  .username {
+    margin: 0;
+    font-size: .75rem;
+    font-weight: 700;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  ul.links {
+    margin: .5rem 0 0 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: inline-block;
+      margin: 0 .15rem;
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+}
+
+p.comingsoon {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.copyright {
+  margin-top: 2 * 1.35rem;
+  font-size: .85rem;
+  text-align: center;
 }
